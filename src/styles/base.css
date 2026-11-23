@@ -1,0 +1,58 @@
+/*
+ * Variables partagées par tous les composants.
+ * Une couleur par bus : elles servent aux animations (US-09).
+ */
+:root {
+  --fond: #f4f5f7;
+  --surface: #ffffff;
+  --texte: #1b1f24;
+  --texte-secondaire: #4b5563;
+  --bordure: #d1d5db;
+  --accent: #1f3864;
+
+  --bus-adresse: #2a78d6;
+  --bus-donnees: #eb6834;
+  --bus-controle: #4a3aa7;
+  --actif: #eda100;
+
+  --police: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --police-mono: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--police);
+  color: var(--texte);
+  background: var(--fond);
+}
+
+button {
+  font: inherit;
+  min-height: 40px;
+  padding: 0 16px;
+  border-radius: 6px;
+  border: 1px solid var(--accent);
+  background: var(--surface);
+  color: var(--accent);
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.mono {
+  font-family: var(--police-mono);
+}
+
+/* Composant actif pendant une étape (registre, UAL, unité de contrôle, case mémoire) */
+.actif {
+  outline: 3px solid var(--actif);
+  outline-offset: 2px;
+  transition: outline-color 0.2s;
+}
